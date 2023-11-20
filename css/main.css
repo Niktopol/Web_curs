@@ -253,7 +253,6 @@ body{
                 padding: 0.5em;
                 padding-top: 2em;
                 font-size: 50px;
-                
                 border-top-right-radius: 150px;
                 backdrop-filter: blur(10px);
                 background-color:#fc8b5f1f;
@@ -288,7 +287,7 @@ body{
             height: 100%;
             & img{
                 width: inherit;
-                height: inherit;
+                height: 100%;
                 object-fit: cover;
                 object-position: center center;
             }
@@ -304,58 +303,89 @@ body{
         box-shadow: 0 0px 8px #0000004f;
         background-color: var(--orange);
         & .service_card{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            position: relative;
             width: 300px;
             height: 20em;
-            font-family: 'Noto Sans HK';
             font-size: 22px;
-            box-shadow: 0 0 5px #0000004f;
-            background-color: #ffffff;
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            transition: transform 0.2s ease-in-out;
             &:hover{
                 transform: scale(1.05);
-                box-shadow: 0 10px 8px #0000004f;
-                & > div:first-child{
-                    padding-top: 1em;
-                    margin-bottom: 0em;
+                & .serv_fr{
+                    box-shadow: 0 10px 8px #0000004f;
+                    & > div:first-child{
+                        padding-top: 1em;
+                        margin-bottom: 0em;
+                    }
+                }
+                & .serv_back{
+                    box-shadow: 0 10px 8px #0000004f;
                 }
             }
-            & > div:first-child{
+            & .shown{
+                transition: transform 0.2s ease-in-out 0.2s, box-shadow 0.2s ease-in-out;
+                transform: rotateY(0deg);
+            }
+            & .hidden{
+                transition: transform 0.2s ease-in-out;
+                transform: rotateY(90deg);
+            }
+            & .serv_fr{
+                position: absolute;
+                top: 0;
+                left: 0;
                 display: flex;
-                align-items: flex-end;
-                height: 4em;
+                flex-direction: column;
+                align-items: center;
+                height: 100%;
                 width: 100%;
-                padding-bottom: 1em;
-                margin-bottom: 1em;
-                font-size: 30px;
-                background-color: var(--peach);
-                transition: all 0.2s ease-out;
-                & span{
-                    display: block;
+                font-family: 'Noto Sans HK';
+                box-shadow: 0 0 5px #0000004f;
+                background-color: #ffffff;
+                & > div:first-child{
+                    display: flex;
+                    align-items: flex-end;
+                    height: 4em;
                     width: 100%;
-                    text-align: center;
+                    padding-bottom: 1em;
+                    margin-bottom: 1em;
+                    font-size: 30px;
+                    background-color: var(--peach);
+                    transition: all 0.2s ease-out;
+                    & span{
+                        display: block;
+                        width: 100%;
+                        text-align: center;
+                        color: #ffffff;
+                    }
+                }
+                & p{
+                    flex-grow: 1;
+                    padding: 1em;
+                }
+                & button{
+                    border: none;
+                    background-color: var(--peach);
+                    cursor: pointer;
+                    width: fit-content;
+                    font-size: 18px;
+                    padding: 0.5em 1em;
+                    margin-bottom: 2em;
                     color: #ffffff;
+                    transition: transform 0.1s ease-in-out;
+                    &:active{
+                        transform: scale(1.05);
+                    }
                 }
             }
-            & p{
-                flex-grow: 1;
-                padding: 1em;
-            }
-            & button{
-                border: none;
-                background-color: var(--peach);
+            & .serv_back{
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
                 cursor: pointer;
-                width: fit-content;
-                font-size: 18px;
-                padding: 0.5em 1em;
-                margin-bottom: 2em;
-                color: #ffffff;
-                transition: transform 0.1s ease-in-out;
-                &:active{
-                    transform: scale(1.05);
-                }
+                background-color: red;
+                box-shadow: 0 0 5px #0000004f;
             }
         }
     }
@@ -501,12 +531,22 @@ body{
         #services{
             & .service_card{
                 font-size: 20px;
+                & .serv_fr{
+                    & > div:first-child{
+                        font-size: 28px;
+                    }
+                    & button{
+                        font-size: 16px;
+                    }
+                }
+                /*
+                font-size: 20px;
                 & > div:first-child{
                     font-size: 28px;
                 }
                 & button{
                     font-size: 16px;
-                }
+                }*/
             }
         }
     }
