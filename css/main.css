@@ -287,7 +287,7 @@ body{
             height: 100%;
             & img{
                 width: inherit;
-                height: 100vh;
+                height: 100%;
                 object-fit: cover;
                 object-position: center center;
             }
