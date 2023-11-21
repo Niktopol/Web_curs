@@ -25,7 +25,7 @@ header{
         display: flex;
         align-items: center;
     }
-    & #logo{
+    & > #logo{
         height: 54px;
         width: 190px;
         flex-shrink: 0;
@@ -48,13 +48,13 @@ header{
             }
         }
     }
-    & nav{
+    & > nav{
         height: inherit;
         flex-grow: 1;
         & *{
             font-family: 'Noto Sans HK';
         }
-        & #catalog{
+        & > #catalog{
             display: flex;
             align-items: center;
             justify-content: center;
@@ -68,7 +68,7 @@ header{
             &:active{
                 background-color: var(--peach);
             }
-            & #burger{
+            & > #burger{
                 height: 18px;
                 width: 20px;
                 position: relative;
@@ -90,13 +90,13 @@ header{
                     }
                 }
             }
-            & span{
+            & > span{
                 color: white;
                 font-size: 16px;
                 font-weight: bold;
             }
         }
-        & #search{
+        & > #search{
             display: flex;
             align-items: center;
             flex-grow: 1;
@@ -110,13 +110,19 @@ header{
             & *{
                 font-size: 16px;
             }
+            & button{
+                position: relative;
+                border: none;
+                display: block;
+                cursor: pointer;
+            }
             & > span{
                 display: flex;
                 flex-direction: row;
                 column-gap: 8px;
                 min-width: 150px;
                 flex-grow: 1;
-                & input{
+                & > input{
                     border: none;
                     outline: none;
                     width: calc(100% - 38px);
@@ -127,7 +133,7 @@ header{
                     transition-timing-function: ease-in-out;
                     &:valid{
                         border-bottom: 2px solid var(--peach);
-                        &  + #clear_btn{
+                        & + #clear_btn{
                             opacity: 1;
                             visibility: visible;
                         }
@@ -136,39 +142,33 @@ header{
                         border-bottom: 2px solid var(--peach);
                     }
                 }
-            }
-            & button{
-                position: relative;
-                border: none;
-                display: block;
-                cursor: pointer;
-            }
-            & #clear_btn{
-                height: 30px;
-                width: 30px;
-                background: none;
-                opacity: 0;
-                visibility: hidden;
-                transition: opacity 0.1s linear;
-                &::before, &::after{
-                    content: "";
-                    display: block;
-                    position: absolute;
-                    top: calc(50% - 1px);
-                    left: calc((30px - 15px)/2);
-                    width: 15px;
-                    height: 2px;
-                    border-radius: 10px;
-                    background-color: black;
-                }
-                &::before{
-                    transform: rotate(45deg);
-                }
-                &::after{
-                    transform: rotate(-45deg);
+                & > #clear_btn{
+                    height: 30px;
+                    width: 30px;
+                    background: none;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: opacity 0.1s linear;
+                    &::before, &::after{
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        top: calc(50% - 1px);
+                        left: calc((30px - 15px)/2);
+                        width: 15px;
+                        height: 2px;
+                        border-radius: 10px;
+                        background-color: black;
+                    }
+                    &::before{
+                        transform: rotate(45deg);
+                    }
+                    &::after{
+                        transform: rotate(-45deg);
+                    }
                 }
             }
-            & #search_btn{
+            & > #search_btn{
                 display: flex;
                 align-items: center;
                 height: inherit;
@@ -180,24 +180,24 @@ header{
                 &:active{
                     background-color: var(--peach);
                 }
-                & svg{
+                & > svg{
                     display: none;
                     height: 30px;
                     width: 30px;
-                    & path{
+                    & > path{
                         fill: #ffffff;
                     }
                 }
             }
         }
     }
-    & #user_control{
+    & > #user_control{
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
         column-gap: 16px;
-        & button{
+        & > button{
             border: none;
             background: none;
             cursor: pointer;
@@ -205,17 +205,17 @@ header{
             &:hover{
                 opacity: 0.7;
             }
-            & figure{
+            & > figure{
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 flex-direction: column;
                 height: inherit;
-                & svg{
+                & > svg{
                     display: block;
                     height: 25px;
                 }
-                & figcaption{
+                & > figcaption{
                     font-family: 'Noto Sans HK';
                     font-size: 14px;
                 }
@@ -225,7 +225,10 @@ header{
 }
 body{
     padding-top: var(--header_height);
-    & #welcome{
+    & * {
+        font-family: 'Noto Sans HK';
+    }
+    & > #welcome{
         display: flex;
         width: 100%;
         & > div:first-child{
@@ -248,7 +251,7 @@ body{
                 color: #ffffffee;
                 width: fit-content;
             }   
-            & h1{
+            & > h1{
                 display: flex;
                 padding: 0.5em;
                 padding-top: 2em;
@@ -257,7 +260,7 @@ body{
                 backdrop-filter: blur(10px);
                 background-color:#fc8b5f1f;
             }
-            & span{
+            & > span{
                 position: relative;
                 font-size: 30px;
                 margin-left: 60px;
@@ -265,7 +268,7 @@ body{
                 border-left: 0.1em solid #ffffffee;
                 border-right: 0.1em solid #ffffffee;
             }
-            & button{
+            & > button{
                 border: none;
                 font-size: 20px;
                 margin-left: 60px;
@@ -293,136 +296,185 @@ body{
             }
         }
     }
-    #services{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: center;
-        gap: 40px 1em;
-        padding: 40px;
+    & > main{
         box-shadow: 0 0px 8px #0000004f;
-        background-color: var(--orange);
-        & .service_card{
-            position: relative;
-            width: 300px;
-            height: 20em;
-            font-size: 22px;
-            transition: transform 0.2s ease-in-out;
-            &:hover{
-                transform: scale(1.05);
-                & .serv_fr{
-                    box-shadow: 0 10px 8px #0000004f;
-                    & > div:first-child{
-                        padding-top: 1em;
-                        margin-bottom: 0em;
-                    }
-                }
-                & .serv_back{
-                    box-shadow: 0 10px 8px #0000004f;
-                }
+        & > #about{
+            display: flex;
+            flex-direction: column;
+            padding: 80px;
+            background-color: #ffffff;
+            & > *{
+                flex-grow: 1;
             }
-            & .shown{
-                transition: transform 0.2s ease-in-out 0.2s, box-shadow 0.2s ease-in-out;
-                transform: rotateY(0deg);
+            & h1{
+                font-size: 40px;
+                text-align: center;
             }
-            & .hidden{
-                transition: transform 0.2s ease-in-out;
-                transform: rotateY(90deg);
-            }
-            & .serv_fr{
-                position: absolute;
-                top: 0;
-                left: 0;
+            & > div{
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
                 align-items: center;
-                height: 100%;
-                width: 100%;
-                font-family: 'Noto Sans HK';
-                box-shadow: 0 0 5px #0000004f;
-                background-color: #ffffff;
-                & > div:first-child{
-                    display: flex;
-                    align-items: flex-end;
-                    height: 4em;
-                    width: 100%;
-                    padding-bottom: 1em;
-                    margin-bottom: 1em;
-                    font-size: 30px;
+                column-gap: 24px;
+                padding: 0 24px;
+                margin: 10px 0;
+                & > span{
+                    display: block;
                     background-color: var(--peach);
-                    transition: all 0.2s ease-out;
-                    & span{
-                        display: block;
-                        width: 100%;
-                        text-align: center;
-                        color: #ffffff;
-                    }
                 }
-                & p{
+                & > span:first-child, > span:last-child{
+                    height: 4px;
                     flex-grow: 1;
-                    padding: 1em;
                 }
-                & button{
-                    border: none;
-                    background-color: var(--peach);
-                    cursor: pointer;
-                    width: fit-content;
-                    font-size: 18px;
-                    padding: 0.5em 1em;
-                    margin-bottom: 2em;
-                    color: #ffffff;
-                    transition: transform 0.1s ease-in-out;
-                    &:active{
-                        transform: scale(1.05);
-                    }
+                & > span:nth-child(2){
+                    height: 16px;
+                    width: 16px;
+                    border-radius: 50%;
                 }
             }
-            & .serv_back{
-                position: absolute;
-                top: 0;
-                left: 0;
-                height: 100%;
-                width: 100%;
-                cursor: pointer;
-                background-color: red;
-                box-shadow: 0 0 5px #0000004f;
+            & > p{
+                font-size: 22px;
+                text-indent: 2em;
             }
         }
-    }
-    & #sales{
-        background-color: #ffffff;
+        & > #services{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            gap: 40px 1em;
+            padding: 40px;
+            background-color: var(--orange);
+            & > h1{
+                display: block;
+                width: calc(100% - 80px);
+                padding: 0.5em 0;
+                text-align: center;
+                font-size: 40px;
+                color: #ffffff;
+                border-top: 3px dashed #ffffff;
+                border-bottom: 3px dashed #ffffff;
+            }
+            & > .service_card{
+                position: relative;
+                width: 300px;
+                height: 20em;
+                font-size: 22px;
+                transition: transform 0.2s ease-in-out;
+                &:hover{
+                    transform: scale(1.05);
+                    & > .serv_fr{
+                        box-shadow: 0 10px 8px #0000004f;
+                        & > div:first-child{
+                            padding-top: 1em;
+                            margin-bottom: 0em;
+                        }
+                    }
+                    & > .serv_back{
+                        box-shadow: 0 10px 8px #0000004f;
+                    }
+                }
+                & > .shown{
+                    transition: transform 0.2s ease-in-out 0.2s, box-shadow 0.2s ease-in-out;
+                    transform: rotateY(0deg);
+                }
+                & > .hidden{
+                    transition: transform 0.2s ease-in-out;
+                    transform: rotateY(90deg);
+                }
+                & > .serv_fr{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    height: 100%;
+                    width: 100%;
+                    box-shadow: 0 0 5px #0000004f;
+                    background-color: #ffffff;
+                    & > div:first-child{
+                        display: flex;
+                        align-items: flex-end;
+                        height: 4em;
+                        width: 100%;
+                        padding-bottom: 1em;
+                        margin-bottom: 1em;
+                        font-size: 30px;
+                        background-color: var(--peach);
+                        transition: all 0.2s ease-out;
+                        & span{
+                            display: block;
+                            width: 100%;
+                            text-align: center;
+                            color: #ffffff;
+                        }
+                    }
+                    & > p{
+                        flex-grow: 1;
+                        padding: 1em;
+                    }
+                    & > button{
+                        border: none;
+                        background-color: var(--peach);
+                        cursor: pointer;
+                        width: fit-content;
+                        font-size: 18px;
+                        padding: 0.5em 1em;
+                        margin-bottom: 2em;
+                        color: #ffffff;
+                        transition: transform 0.1s ease-in-out;
+                        &:active{
+                            transform: scale(1.05);
+                        }
+                    }
+                }
+                & > .serv_back{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    cursor: pointer;
+                    background-color: red;
+                    box-shadow: 0 0 5px #0000004f;
+                }
+            }
+        }
+        & > #sales{
+            background-color: #ffffff;
+        }
     }
 }
 @media screen and (max-width: 1150px) {
     header{
         width: 98%;
         padding: 0 1%;
-        & #logo{
+        & > #logo{
             height: 45px;
             width: 140px;
             column-gap: 4px;
-            & span{
+            & > span{
                 font-size: 20px;
             }
         }
-        & nav{
-            & #search{
+        & > nav{
+            & > #search{
                 margin: 0 10px;
             }
         }
     }
     body{
-        & #welcome{
+        & > #welcome{
             & > div:first-child{
                 min-height: calc(100vh - var(--header_height) - 8em);
                 padding: 4em;
-                & h1{
+                & > h1{
                     font-size: 45px;
                 }
-                & span{
+                & > span{
                     font-size: 25px;
                 }
-                & button{
+                & > button{
                     font-size: 15px;
                 }
             }
@@ -434,7 +486,7 @@ body{
         --header_height: 60px;
     }
     header{
-        & #logo{
+        & > #logo{
             height: 45px;
             width: 120px;
             column-gap: 4px;
@@ -442,39 +494,70 @@ body{
                 font-size: 16px;
             }
         }
-        & nav{
+        & > nav{
             & #catalog{
                 padding: 12px;
                 & > span{
                     font-size: 13px;
                 }
             }
-            & #search{
+            & > #search{
                 height: 40px;
-                
                 & > span{
                     column-gap: 4px;
                     & input{
                         width: calc(100% - 34px);
                     }
                 }
-                & #search_btn{
+                & > #search_btn{
                     padding: 5px;
-                    & span{
+                    & > span{
                         display: none;
                     }
-                    & svg{
+                    & > svg{
                         display: block;
                     }
                 }
             }
         }
-        & #user_control{
+        & > #user_control{
             padding: 0 8px;
-            & button{
-                & figure{
-                    & figcaption{
+            & > button{
+                & > figure{
+                    & > figcaption{
                         display: none;
+                    }
+                }
+            }
+        }
+    }
+    body{
+        & > main{
+            & > #about{
+                & h1{
+                    font-size: 30px;
+                }
+                & > p{
+                    font-size: 18px;
+                }
+            }
+            & > #services{
+                & > h1{
+                    font-size: 30px;
+                }
+                & > .service_card{
+                    &:hover{
+                        transform: scale(1);
+                        & > .serv_fr{
+                            box-shadow: 0 0px 5px #0000004f;
+                            & > div:first-child{
+                                padding-top: 0em;
+                                margin-bottom: 1em;
+                            }
+                        }
+                        & > .serv_back{
+                            box-shadow: 0 0px 5px #0000004f;
+                        }
                     }
                 }
             }
@@ -490,17 +573,17 @@ body{
         align-content: space-between;
         width: 100%;
         padding: 0;
-        & nav{
+        & > nav{
             height: 40px;
             width: 100%;
             order: 2;
-            & #catalog{
+            & > #catalog{
                 height: 40px;
                 & > span{
                     display: none;
                 }
             }
-            & #search{
+            & > #search{
                 margin: 0;
                 border-radius: 0;
                 & #search_btn{
@@ -511,62 +594,64 @@ body{
         }
     }
     body{
-        & #welcome{
+        & > #welcome{
             & > div:first-child{
                 min-height: calc(100vh - var(--header_height) - 6em);
                 padding: 3em;
-                & h1{
+                & > h1{
                     font-size: 35px;
                 }
-                & span{
+                & > span{
                     font-size: 20px;
                     margin-left: 0;
                 }
-                & button{
+                & > button{
                     font-size: 15px;
                     margin-left: 0;
                 }
             }
         }
-        #services{
-            & .service_card{
-                font-size: 20px;
-                & .serv_fr{
-                    & > div:first-child{
-                        font-size: 28px;
-                    }
-                    & button{
-                        font-size: 16px;
+        & > main{
+            & > #services{
+                & > .service_card{
+                    font-size: 20px;
+                    & > .serv_fr{
+                        & > div:first-child{
+                            font-size: 28px;
+                        }
+                        & > button{
+                            font-size: 16px;
+                        }
                     }
                 }
-                /*
-                font-size: 20px;
-                & > div:first-child{
-                    font-size: 28px;
-                }
-                & button{
-                    font-size: 16px;
-                }*/
             }
         }
     }
 }
 @media screen and (max-width: 435px) {
     body{
-        & #welcome{
+        & > #welcome{
             & > div:first-child{
                 min-height: calc(100vh - var(--header_height) - 2em);
                 padding: 1em;
-                & h1{
+                & > h1{
                     font-size: 30px;
                 }
-                & span{
+                & > span{
                     font-size: 18px;
                     margin-left: 0;
                 }
-                & button{
+                &  > button{
                     font-size: 15px;
                     margin-left: 0;
+                }
+            }
+        }
+        & > main{
+            & > #about{
+                padding: 40px;
+                & > p{
+                    font-size: 16px;
                 }
             }
         }
