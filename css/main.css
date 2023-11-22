@@ -441,7 +441,114 @@ body{
             }
         }
         & > #sales{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 40px;
+            padding: 40px 0;
             background-color: #ffffff;
+            & > h1{
+                width: 80%;
+                font-size: 40px;
+            }
+            & > div{
+                position: relative;
+                display: flex;
+                width: 100%;
+                padding-bottom: 50%;
+                align-items: center;
+                justify-content: center;
+                & > div{
+                    position: absolute;
+                    top: 0;
+                    left: 10%;
+                    width: 80%;
+                    height: 100%;
+                    display: grid;
+                    grid-template-areas: "one   two ."
+                                         "three .   four"
+                                         "five  six .";
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-template-rows: repeat(3, 1fr);
+                    gap: 20px;
+                    & > div{
+                        transition: transform 0.2s ease-in-out;
+                        &:hover{
+                            transform: scale(1.025);
+                            &::after{
+                                height: 8px;
+                            }
+                        }
+                        &::after{
+                            content: "";
+                            position: absolute;
+                            bottom: 0;
+                            width: 100%;
+                            height: 0;
+                            background-color: var(--peach);
+                            transition: height 0.2s ease-in-out;
+                        }
+                    }
+                    & > div:nth-child(1){
+                        grid-area: one;
+                        background-color: red;
+                    }
+                    & > div:nth-child(2){
+                        grid-area: two;
+                        grid-column: span 2;
+                        background-color: red;
+                    }
+                    & > div:nth-child(3){
+                        grid-area: three;
+                        grid-column: span 2;
+                        background-color: red;
+                    }
+                    & > div:nth-child(4){
+                        grid-area: four;
+                        background-color: red;
+                    }
+                    & > div:nth-child(5){
+                        grid-area: five;
+                        background-color: red;
+                    }
+                    & > div:nth-child(6){
+                        grid-area: six;
+                        grid-column: span 2;
+                        background-color: red;
+                    }
+                }
+            }
+        }
+        & > #popular{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 40px;
+            padding: 40px 0;
+            border-top: 4px dashed var(--orange);
+            background-color: #ffffff;
+            overflow: hidden;
+            & > h1{
+                width: 80%;
+                font-size: 40px;
+            }
+            & > div{
+                width: 100%;
+                height: 300px;
+                & > div{
+                    position: absolute;
+                    width: calc(100% - 10px);
+                    height: 300px;
+                    border: 5px solid red;
+                    transition: left 0.2s ease-in-out;
+                }
+                & > .hidden{
+                    left: -100%;
+                }
+                & > .visible{
+                    left: 0;
+                }
+            }
         }
     }
 }
@@ -532,6 +639,13 @@ body{
         }
     }
     body{
+        & #welcome{
+            & > div:first-child{
+                &:hover{
+                    backdrop-filter: blur(3px);
+                }
+            }
+        }
         & > main{
             & > #about{
                 & h1{
@@ -559,6 +673,37 @@ body{
                             box-shadow: 0 0px 5px #0000004f;
                         }
                     }
+                }
+            }
+            & > #sales{
+                & > h1{
+                    width: 90%;
+                    font-size: 30px;
+                }
+                & > div{
+                    width: 100%;
+                    padding-bottom: 60%;
+                    & > div{
+                        top: 0;
+                        left: 5%;
+                        width: 90%;
+                        height: 100%;
+                        gap: 10px;
+                        & > div{
+                            &:hover{
+                                transform: scale(1);
+                                &::after{
+                                    height: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            & > #popular{
+                & > h1{
+                    width: 90%;
+                    font-size: 30px;
                 }
             }
         }
@@ -622,6 +767,21 @@ body{
                         & > button{
                             font-size: 16px;
                         }
+                    }
+                }
+            }
+            & > #sales{
+                & > div{
+                    width: 100%;
+                    padding-bottom: 153.064%;
+                    & > div{
+                        grid-template-areas: "one   four"
+                                             "two   ."
+                                             "three ."
+                                             "six   ."
+                                             "five  .";
+                        grid-template-columns: repeat(2, 1fr);
+                        grid-template-rows: repeat(5, 1fr);
                     }
                 }
             }
