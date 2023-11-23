@@ -226,29 +226,37 @@ header{
 @keyframes visible_l {
     from{
         left: 100%;
+        z-index: 2;
     }to{
         left: 0;
+        z-index: 2;
     }
 }
 @keyframes hidden_l {
     from{
         left: 0;
+        z-index: 1;
     }to{
         left: -100%;
+        z-index: 1;
     }
 }
 @keyframes visible_r {
     from{
         left: -100%;
+        z-index: 2;
     }to{
         left: 0;
+        z-index: 2;
     }
 }
 @keyframes hidden_r {
     from{
         left: 0;
+        z-index: 1;
     }to{
         left: 100%;
+        z-index: 1;
     }
 }
 body{
@@ -563,7 +571,7 @@ body{
                 position: relative;
                 width: 100%;
                 padding-bottom: 27%;
-                overflow: hidden;
+                overflow-x: hidden;
                 & > div{
                     position: absolute;
                     display: grid;
@@ -574,19 +582,14 @@ body{
                     align-content: center;
                     width: 100%;
                     height: 100%;
+                    z-index: 0;
                     animation-duration: 0.3s;
                     animation-timing-function: ease-in-out;
-                    animation-fill-mode: forwards;
+                    animation-fill-mode: both;
                     animation-iteration-count: 1;
                     background-color: #ffffff;
-                    &:nth-child(1){
-                        z-index: 3;
-                    }
-                    &:nth-child(2){
+                    &:first-child{
                         z-index: 2;
-                    }
-                    &:nth-child(3){
-                        z-index: 1;
                     }
                     & > div{
                         background-color: red;
@@ -606,12 +609,16 @@ body{
                 }
             }
             & > div:last-child{
+                display: flex;
+                align-items: center;
+                column-gap: 5px;
                 align-self: flex-end;
                 margin-right: 10%;
                 & > button{
                     width: 80px;
                     height: 40px;
                     border: none;
+                    cursor: pointer;
                     background-color: var(--orange);
                     transition: background-color 0.1s ease-in-out;
                     &:active{
@@ -629,33 +636,64 @@ body{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
+        padding: 20px;
         color: #ffffff;
         background-color: var(--orange);
         & > div{
             display: flex;
-            gap: 10px;
+            flex-direction: column;
+            padding: 0 20px;
+            border-left: 3px solid var(--peach);
             & > h3{
                 display: block;
                 width: 100%;
+                padding-bottom: 1em;
+            }
+            & > a{
+                text-indent: 1em;
+                color: #ffffff;
+                &:visited{
+                    color: #ffffff;
+                }
             }
             &:first-child{
-                flex-direction: row;
-                flex-wrap: wrap;
-                & > a{
-                    display: block;
-                    height: 40px;
-                    width: 40px;
-                    border-radius: 50%;
-                    background-color: var(--peach);
-                    & > img{
-                        width: 60%;
-                        height: 60%;
-                        margin: 20%;
+                border-left: none;
+                & > div{
+                    display: flex;
+                    flex-direction: row;
+                    column-gap: 5px;
+                    & > a{
+                        display: block;
+                        height: 50px;
+                        width: 50px;
+                        border-radius: 50%;
+                        background-color: var(--peach); 
+                        transition: all 0.2s ease-in-out;
+                        &:hover{
+                            outline: var(--peach) solid 3px;
+                            background-color: var(--pink);
+                        }
+                        & > img{
+                            width: 60%;
+                            height: 60%;
+                            margin: 20%;
+                        }
                     }
                 }
             }
-            &:nth-child(2), &:last-child{
-                flex-direction: column;
+            &:last-child > span{
+                display: flex;
+                flex-wrap: nowrap;
+                align-items: center;
+                gap: 0.1em;
+                & > svg{
+                    height: 1em;
+                    fill: #ffffff;
+                }
+                & > a{
+                    color: #ffffff;
+                    text-decoration: none;
+                }
             }
         }
     }
@@ -824,6 +862,31 @@ body{
                 }
             }
         }
+        & > footer{
+            gap: 10px;
+            padding: 10px;
+            & > div{
+                padding: 0 10px;
+                & > a{
+                    font-size: 14px;
+                    text-indent: 0;
+                }
+                &:first-child{
+                    & > div{
+                        & > a{
+                            height: 40px;
+                            width: 40px;
+                        }
+                    }
+                }
+                &:last-child > span{
+                    font-size: 14px;
+                    & > a{
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
     }
 }
 @media screen and (max-width: 640px) {
@@ -909,6 +972,17 @@ body{
                         grid-template-columns: repeat(2, 45%);
                         grid-template-rows: repeat(2, 1fr);
                     }
+                }
+            }
+        }
+        & > footer{
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, auto);
+            & > div{
+                border-left: none;
+                border-top: 3px solid var(--peach);
+                &:first-child{
+                    border-top: none;
                 }
             }
         }
