@@ -508,7 +508,7 @@ body{
                     grid-template-rows: repeat(3, 1fr);
                     gap: 20px;
                     & > div{
-                        background-size: contain;
+                        background-size: cover;
                         background-position: center center;
                         background-repeat: no-repeat;
                         transition: transform 0.2s ease-in-out;
@@ -566,8 +566,8 @@ body{
             & > div:nth-child(2){
                 position: relative;
                 width: 100%;
-                padding-bottom: 27%;
-                overflow-x: hidden;
+                padding-bottom: calc(27% + 2vw);
+                overflow: hidden;
                 & > div{
                     position: absolute;
                     display: grid;
@@ -577,8 +577,9 @@ body{
                     justify-content: center;
                     align-content: center;
                     width: 100%;
-                    height: 100%;
+                    height: calc(100% - 2vw);
                     z-index: 0;
+                    padding: 1vw 0;
                     animation-duration: 0.3s;
                     animation-timing-function: ease-in-out;
                     animation-fill-mode: both;
@@ -587,9 +588,75 @@ body{
                     &:first-child{
                         z-index: 2;
                     }
-                    & > div{
-                        font-size: 5vw;
-                        background-color: red;
+                    & > a{
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        grid-template-rows: 45% 3vw auto 3vw;
+                        padding: 1vw;
+                        row-gap: 6px;
+                        text-decoration: none;
+                        color: #000000;
+                        box-shadow: 0 0 8px #0000002f;
+                        background-color: white;
+                        &:visited{
+                            color: #000000;
+                        }
+                        & > img{
+                            width: 100%;
+                        }
+                        & > .price{
+                            border-top: 3px solid var(--orange);
+                            padding-top: 0.25vw;
+                            display: flex;
+                            align-items: center;
+                            column-gap: 0.5vw;
+                            & > span{
+                                &:nth-child(1){
+                                    padding: 0 0.5em;
+                                    border-radius: 15px;
+                                    font-size: 0.8vw;
+                                    color: #ffffff;
+                                    background-color: #ed1b24;
+                                }
+                                &:nth-child(2){
+                                    font-weight: bold;
+                                    font-size: 1.4vw;
+                                }
+                                &:nth-child(3){
+                                    font-size: 0.8vw;
+                                    text-decoration: line-through;
+                                    color: #5a5a5a;
+                                }
+                            }
+                        }
+                        & > p{
+                            overflow: hidden;
+                            font-size: 1vw;
+                        }
+                        & > .cartnlike{
+                            display: flex;
+                            column-gap: 0.5vw;
+                            & > button{
+                                height: 2.8vw;
+                                width: 2.8vw;
+                                border: 0.2vw solid var(--orange);
+                                border-radius: 50%;
+                                background-color: var(--orange);
+                                transition: background-color 0.2s ease-in-out;
+                                & > img{
+                                    height: 60%;
+                                    width: 60%;
+                                    padding: 20%;
+                                    filter: invert(1);
+                                }
+                            }
+                            & > .selected{
+                                background-color: #ffffff;
+                                & > img{
+                                    filter: invert(47%) sepia(79%) saturate(4038%) hue-rotate(348deg) brightness(99%) contrast(85%);
+                                }
+                            }
+                        }
                     }
                 }
                 & > .hidden_l{
@@ -605,13 +672,23 @@ body{
                     animation-name: visible_r;
                 }
             }
-            & > div:last-child{
+            & > #scroll_control{
                 display: flex;
                 align-items: center;
                 column-gap: 5px;
                 align-self: flex-end;
                 margin-right: 10%;
-                & > button{
+                & > span{
+                    display: block;
+                    height: 30px;
+                    padding: 5px 20px;
+                    font-size: 20px;
+                    color: #ffffff;
+                    border-top-left-radius: 20px;
+                    border-bottom-left-radius: 20px;
+                    background-color: var(--orange);
+                };
+                & > .scroll_btn{
                     width: 80px;
                     height: 40px;
                     border: none;
@@ -829,7 +906,6 @@ body{
                     & > div{
                         left: 5%;
                         width: 90%;
-                        /*gap: 10px;*/
                         & > div{
                             &:hover{
                                 transform: scale(1);
@@ -847,8 +923,40 @@ body{
                     font-size: 30px;
                 }
                 & > div:nth-child(2){
+                    padding-bottom: 132.605%;
                     & > div{
                         gap: 10px;
+                        grid-template-columns: repeat(2, 45%);
+                        grid-template-rows: repeat(2, 1fr);
+                        & > a{
+                            grid-template-rows: 45% 7vw auto 7vw;
+                            padding: 3vw;
+                            & > .price{
+                                & > span{
+                                    &:nth-child(1){
+                                        font-size: 2vw;
+                                    }
+                                    &:nth-child(2){
+                                        font-weight: bold;
+                                        font-size: 3vw;
+                                    }
+                                    &:nth-child(3){
+                                        font-size: 2vw;
+                                    }
+                                }
+                            }
+                            & > p{
+                                overflow: hidden;
+                                font-size: 2vw;
+                            }
+                            & > .cartnlike{
+                                & > button{
+                                    height: 6.6vw;
+                                    width: 6.6vw;
+                                    border: 0.4vw solid var(--orange);
+                                }
+                            }
+                        }
                     }
                 }
                 & > div:last-child{
@@ -957,15 +1065,6 @@ body{
                                              "five  .";
                         grid-template-columns: repeat(2, 1fr);
                         grid-template-rows: repeat(5, 1fr);
-                    }
-                }
-            }
-            & > #popular{
-                & > div:nth-child(2){
-                    padding-bottom: 132.605%;
-                    & > div{
-                        grid-template-columns: repeat(2, 45%);
-                        grid-template-rows: repeat(2, 1fr);
                     }
                 }
             }
