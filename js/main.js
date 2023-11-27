@@ -1,4 +1,18 @@
 "use strict";
+function toggleMenuFold(){
+    let catalogBtn = document.querySelector("#catalog");
+    if(catalogBtn.className == "folded"){
+        catalogBtn.className = "unfolded";
+        catalogBtn.querySelector("#burger").className = "unfolded";
+        document.querySelector("#menu").className = "unfolded";
+    }else{
+        catalogBtn.className = "folded";
+        catalogBtn.querySelector("#burger").className = "folded";
+        document.querySelector("#menu").className = "folded";
+    }
+}
+document.querySelector("#catalog").addEventListener("click", toggleMenuFold);
+document.querySelector("#welcome button").addEventListener("click", toggleMenuFold);
 document.querySelector("#clear_btn").addEventListener("click", function(){
     document.querySelector("#search input").value = "";
 });
@@ -49,23 +63,21 @@ function initScroller(){
 
 }
 window.onload = function(){
-    let categories = [armchairs, beds, blankets, carpets, curtains, mattresses, pillows, poufs, sofas, toys];
+    if(localStorage.getItem("liked") == null){
+        localStorage.setItem("liked", "");
+    }
+    if(localStorage.getItem("cart") == null){
+        localStorage.setItem("cart", "");
+    }
     let popular = [];
     let popItems = document.querySelectorAll("#popular > div")[0];
-    for (let category of categories){
-        for (let item of category){
+    for (let category in goods){
+        for (let item of goods[category]){
             if(item.rating == 5 && item.discount > 0){
                 popular.push(item);
             }
-            if(popular.length == 20){
-                break;
-            }
-        }
-        if(popular.length == 20){
-            break;
         }
     }
-    console.log(popular);
     for(let i = 0; i < (Math.ceil(popular.length/4)); i++){
         let div = document.createElement("div");
         for(let j = 0; j < ((popular.length - 4*i) >= 4? 4:(popular.length - 4*i));j++){
@@ -95,11 +107,19 @@ window.onload = function(){
             btns.className = "cartnlike";
             let cart = document.createElement("button");
             let cartimg = document.createElement("img");
-            cartimg.setAttribute("src", "images/cart.svg")
+            cartimg.setAttribute("src", "images/cart.svg");
+            let in_cart = localStorage.getItem("cart").indexOf(popular[i*4+j]["id"]);
+            if(in_cart >= 0){
+                cart.className = "selected";
+            }
             cart.appendChild(cartimg);
             let like = document.createElement("button");
             let likeimg = document.createElement("img");
             likeimg.setAttribute("src", "images/heart.svg")
+            let is_liked = localStorage.getItem("liked").indexOf(popular[i*4+j]["id"]);
+            if(is_liked >= 0){
+                like.className = "selected";
+            }
             like.appendChild(likeimg);
             btns.appendChild(cart);
             btns.appendChild(like);
@@ -109,23 +129,37 @@ window.onload = function(){
             a.appendChild(p);
             a.appendChild(btns);
 
+            cart.addEventListener("click", function(event){
+                if (event.stopPropagation) {
+                    event.stopPropagation();
+                    event.preventDefault();
+                }
+                in_cart = localStorage.getItem("cart").indexOf(popular[i*4+j]["id"]);
+                if(in_cart < 0){
+                    cart.className = "selected";
+                    localStorage.setItem("cart", localStorage.getItem("cart")+popular[i*4+j]["id"]+",");
+                }else{
+                    location.href = "index.html";
+                }
+            });
+
+            like.addEventListener("click", function(event){
+                if (event.stopPropagation) {
+                    event.stopPropagation();
+                    event.preventDefault();
+                }
+                is_liked = localStorage.getItem("liked").indexOf(popular[i*4+j]["id"]);
+                if(is_liked < 0){
+                    like.className = "selected";
+                    localStorage.setItem("liked", localStorage.getItem("liked")+popular[i*4+j]["id"]+",");
+                }else{
+                    localStorage.setItem("liked", localStorage.getItem("liked").replace(popular[i*4+j]["id"]+",", ""));
+                    like.classList.remove("selected");
+                }
+            });
             div.appendChild(a);
         }
         popItems.appendChild(div);
     }
-    document.querySelectorAll(".cartnlike > button").forEach(function(elem){
-        elem.addEventListener("click", function(event){
-            if (event.stopPropagation) {
-                event.stopPropagation();
-                event.preventDefault();
-            }
-            if(elem.classList.length == 0){
-                elem.className = "selected";
-            }else{
-                elem.className = "";
-            }
-            
-        });
-    });
     initScroller();
 }

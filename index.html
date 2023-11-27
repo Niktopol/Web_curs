@@ -17,8 +17,8 @@
                 </div>
             </div>
             <nav>
-                <button id="catalog">
-                    <div id="burger">
+                <button id="catalog" class="folded">
+                    <div id="burger" class="folded">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -72,8 +72,91 @@
                     </figure>
                 </button>
             </div>
-            <div id="menu"></div>
         </header>
+        <div id="menu" class="folded">
+            <ul>
+                <li>
+                    <a href="todo">
+                        <span>Кресла</span>
+                        <?xml version="1.0" ?>
+                        <svg class="feather feather-chevron-right" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"/>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="todo">
+                        <span>Кровати</span>
+                        <?xml version="1.0" ?>
+                        <svg class="feather feather-chevron-right" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"/>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="todo">
+                        <span>Одеяла</span>
+                        <?xml version="1.0" ?>
+                        <svg class="feather feather-chevron-right" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"/>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="todo">
+                        <span>Ковры</span>
+                        <?xml version="1.0" ?>
+                        <svg class="feather feather-chevron-right" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"/>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="todo">
+                        <span>Шторы</span>
+                        <?xml version="1.0" ?>
+                        <svg class="feather feather-chevron-right" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"/>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="todo">
+                        <span>Матрасы</span>
+                        <?xml version="1.0" ?>
+                        <svg class="feather feather-chevron-right" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"/>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="todo">
+                        <span>Подушки</span>
+                        <?xml version="1.0" ?>
+                        <svg class="feather feather-chevron-right" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"/>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="todo">
+                        <span>Пуфы</span>
+                        <?xml version="1.0" ?>
+                        <svg class="feather feather-chevron-right" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"/>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="todo">
+                        <span>Диваны</span>
+                        <?xml version="1.0" ?>
+                        <svg class="feather feather-chevron-right" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"/>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="todo">
+                        <span>Мягкие игрушки</span>
+                        <?xml version="1.0" ?>
+                        <svg class="feather feather-chevron-right" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
         <div id="welcome">
             <div>
                 <h1>Добро пожаловать в магазин самой пушистой мебели</h1>
@@ -110,7 +193,10 @@
                         <p>У нас вы можете починить свою мебель быстро и недорого!</p>
                         <button>Подробнее</button>
                     </div>
-                    <div class="serv_back hidden"></div>
+                    <div class="serv_back hidden">
+                        <img src="images/fixing.jpg">
+                        <p>Услугу можно оформить в ближайшем магазине Furrniture.</p>
+                    </div>
                 </div>
                 <div class="service_card">
                     <div class="serv_fr shown">
@@ -118,7 +204,10 @@
                         <p>Воспользуйтесь нашими услугами по планировке расстановки мебели.</p>
                         <button>Подробнее</button>
                     </div>
-                    <div class="serv_back hidden"></div>
+                    <div class="serv_back hidden">
+                        <img src="images/plan.jpg">
+                        <p>Наши специалисты всегда готовы принять вызов по номеру <a href="tel:81234567890">+7-123-456-78-90</a>.</p>
+                    </div>
                 </div>
                 <div class="service_card">
                     <div class="serv_fr shown">
@@ -126,7 +215,10 @@
                         <p>Привезём ваш заказ в течение часа.</p>
                         <button>Подробнее</button>
                     </div>
-                    <div class="serv_back hidden"></div>
+                    <div class="serv_back hidden">
+                        <img src="images/moving.jpg">
+                        <p>При оформлении заказа есть возможность выбрать аренду.</p>
+                    </div>
                 </div>
             </div>
             <div id="sales">
@@ -219,16 +311,7 @@
                 </span>
             </div>
         </footer>
-        <script src="js/armchairs.js"></script>
-        <script src="js/beds.js"></script>
-        <script src="js/blankets.js"></script>
-        <script src="js/carpets.js"></script>
-        <script src="js/curtains.js"></script>
-        <script src="js/mattresses.js"></script>
-        <script src="js/pillows.js"></script>
-        <script src="js/poufs.js"></script>
-        <script src="js/sofas.js"></script>
-        <script src="js/toys.js"></script>
+        <script src="js/db.js"></script>
         <script src="js/main.js"></script>
     <body>
     </body>
