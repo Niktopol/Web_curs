@@ -297,6 +297,7 @@ body{
         padding: 5vw 9vw;
         & > #name{
             display: block;
+            padding: 0.5em 0;
             font-size: 1.8vw;
         }
         & > div{
