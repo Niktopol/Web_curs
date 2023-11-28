@@ -84,7 +84,7 @@ window.onload = function(){
         let div = document.createElement("div");
         for(let j = 0; j < ((popular.length - 4*i) >= 4? 4:(popular.length - 4*i));j++){
             let a = document.createElement("a");
-            a.setAttribute("href", "todo");
+            a.href = "good.html?id="+popular[i*4+j]["id"];
             let img = document.createElement("img");
             img.setAttribute("src", popular[i*4+j]["image"]);
             let price = document.createElement("div");
