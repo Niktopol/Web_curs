@@ -70,7 +70,7 @@ window.onload = function(){
                 buttons[0].querySelector("span").textContent = "В корзине";
                 localStorage.setItem("cart", localStorage.getItem("cart")+urlParams.get("id")+",");
             }else{
-                location.href = "index.html";
+                location.href = "cart.html";
             }
         });
         buttons[1].addEventListener("click", function(){
