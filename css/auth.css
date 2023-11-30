@@ -1,0 +1,106 @@
+:root{
+    --orange: #ea592c;
+    --peach: #fc8b5f;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background: var(--peach);
+    background: linear-gradient(180deg, var(--peach) 0%, var(--orange) 100%);
+    & *{
+        font-family: 'Noto Sans HK';
+    }
+    & > div{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 20px;
+        padding: 40px;
+        background-color: #ffffff;
+        box-shadow: 0 0 8px #0000002f;
+        & > a{
+            position: absolute;
+            top: 20px;
+            left: 40px;
+            font-size: 20px;
+            & > svg{
+                position: relative;
+                height: 1em;
+                width: 1em;
+                bottom: -2px;
+            }
+        }
+        & > h1{
+            border-bottom: 3px solid var(--orange);
+            padding: 0 0.25em;
+        }
+        & > form{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+            row-gap: 20px;
+            & > span{
+                width: calc(100% - 3em);
+                padding: 1em 1.5em;
+                border-radius: 30px;
+                box-shadow: 0 0 8px #0000002f;
+            }
+            & input{
+                border: none;
+                outline: none;
+                font-size: 17px;
+                &:nth-child(-n + 2){
+                    width: 100%;
+                    border-bottom: 3px solid #ffffff;
+                    transition: border-bottom 0.2s ease-in-out;
+                    &:valid{
+                        border-bottom: 3px solid var(--orange);
+                    }
+                }
+            }
+            & > input:last-child{
+                cursor: pointer;
+                padding: 1em 1.5em;
+                border-radius: 30px;
+                color: #ffffff;
+                background-color: #ea592c;
+                transition: background-color 0.1s ease-in-out;
+                &:active{
+                    background-color: var(--peach);
+                }
+            }
+        }
+        & > span{
+            & > a{
+                cursor: pointer;
+                text-decoration: underline;
+                color: blue;
+            }
+        }
+    }
+    & > div:nth-child(2){
+        display: none;
+    }
+}
+@media screen and (max-width: 640px) {
+    body{
+        & > div{
+            row-gap: 10px;
+            padding: 20px;
+            width: 100%;
+            & > a{
+                left: 20px;
+            }
+            & > form{
+                row-gap: 10px;
+            }
+        }
+    }
+}
