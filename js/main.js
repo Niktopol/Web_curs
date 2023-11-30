@@ -1,4 +1,12 @@
 "use strict";
+//REMOVE
+function clearMem(){
+    console.log(localStorage.removeItem("liked").getItem("liked"));
+    console.log(localStorage.removeItem("liked").getItem("cart"));
+    localStorage.removeItem("liked");
+    localStorage.removeItem("cart");
+}
+//
 function toggleMenuFold(){
     let catalogBtn = document.querySelector("#catalog");
     if(catalogBtn.className == "folded"){
