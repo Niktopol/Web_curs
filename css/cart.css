@@ -338,22 +338,122 @@ body{
             grid-area: goods;
             grid-column: span 3;
             border-top: 4px solid var(--orange);
-            width: 82vw;/*kjkgkhgkjghjgkguygkugkgkjgjkhgk*/
+            width: 82vw;
             & > div{
+                position: relative;
                 display: none;
                 height: 100%;
-                padding: 4px 0;
+                padding-top: 10px;
+                & > span{
+                    position: absolute;
+                    font-size: 22px;
+                }
                 &:first-child{
-                    grid-template-rows: 30px;
+                    grid-template-columns: 100%;
+                    grid-template-rows: 50px;
+                    grid-auto-rows: 150px;
+                    row-gap: 10px;
+                    & > div:first-child{
+                        display: none;
+                        font-size: 30px;
+                        padding-bottom: 4px;
+                        border-bottom: 4px solid var(--orange);
+                    }
+                    & > a{
+                        display: grid;
+                        grid-template-columns: 225px auto 210px;
+                        overflow: hidden;
+                        text-decoration: none;
+                        color: #000000;
+                        box-shadow: 0 0 8px #0000002f;
+                        &:visited{
+                            color: #000000;
+                        }
+                        & > img{
+                            width: 100%;
+                        }
+                        & > div:nth-child(2){
+                            display: grid;
+                            grid-template-columns: 100%;
+                            grid-template-rows: 30% auto;
+                            padding: 0 10px;
+                            border-left: 4px solid var(--orange);
+                            & > span{
+                                font-weight: bold;
+                                font-size: 25px;
+                            }
+                        }
+                        & > div:last-child{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: row;
+                            column-gap: 10px;
+                            padding: 0 10px;
+                            & > button{
+                                position: relative;
+                                width: 40px;
+                                height: 40px;
+                                cursor: pointer;
+                                border: none;
+                                background-color: var(--orange);
+                                transition: background-color 0.1s ease-in-out;
+                                &:active{
+                                    background-color: var(--peach);
+                                }
+                                &:first-child{
+                                    &::before{
+                                        content: "";
+                                        position: absolute;
+                                        top: 18.5px;
+                                        left: 20%;
+                                        display: block;
+                                        height: 3px;
+                                        width: 60%;
+                                        background-color: #ffffff;
+                                        border-radius: 5px;
+                                    }
+                                }
+                                &:nth-child(3){
+                                    &::before, &::after{
+                                        content: "";
+                                        position: absolute;
+                                        top: 18.5px;
+                                        left: 20%;
+                                        display: block;
+                                        height: 3px;
+                                        width: 60%;
+                                        background-color: #ffffff;
+                                        border-radius: 5px;
+                                    }
+                                    &::after{
+                                        transform: rotate(90deg)
+                                    }
+                                }
+                                & > img{
+                                    height: 80%;
+                                    width: 80%;
+                                    padding: 10%;
+                                    filter: invert(1);
+                                }
+                            }
+                            & > span{
+                                width: 40px;
+                                font-size: 20px;
+                                text-align: center;
+                            }
+                        }
+                    }
                 }
                 &:last-child{
+                    --card-height: calc(((82vw - 30px) / 4) * 14 / 9);
                     grid-template-columns: repeat(4, calc((82vw - 30px) / 4));
-                    grid-auto-rows: calc(((82vw - 30px) / 4) * 14 / 9);
+                    grid-auto-rows: var(--card-height);
                     gap: 10px;
                     & > a{
                         display: grid;
                         grid-template-columns: 1fr;
-                        grid-template-rows: 11.6vw calc((3 / 28 * 100) * 1%) auto calc((3 / 28 * 100) * 1%);
+                        grid-template-rows: calc((11.6 / 28 * 100) * 1%) calc((3 / 28 * 100) * 1%) auto calc((3 / 28 * 100) * 1%);
                         padding: 1vw;
                         row-gap: 6px;
                         text-decoration: none;
@@ -368,24 +468,24 @@ body{
                         }
                         & > .price{
                             border-top: 3px solid var(--orange);
-                            padding-top: 0.25vw;
+                            padding-top: calc(var(--card-height) * 0.25 / 28);
                             display: flex;
                             align-items: center;
-                            column-gap: 0.5vw;
+                            column-gap: calc(var(--card-height) * 0.5 / 28);
                             & > span{
                                 &:nth-child(1){
                                     padding: 0 0.5em;
                                     border-radius: 15px;
-                                    font-size: 0.8vw;
+                                    font-size: calc(var(--card-height) * 0.8 / 28);
                                     color: #ffffff;
                                     background-color: #ed1b24;
                                 }
                                 &:nth-child(2){
                                     font-weight: bold;
-                                    font-size: 1.4vw;
+                                    font-size: calc(var(--card-height) * 1.4 / 28);
                                 }
                                 &:nth-child(3){
-                                    font-size: 0.8vw;
+                                    font-size: calc(var(--card-height) * 0.8 / 28);
                                     text-decoration: line-through;
                                     color: #5a5a5a;
                                 }
@@ -393,16 +493,16 @@ body{
                         }
                         & > p{
                             overflow: hidden;
-                            font-size: 1vw;
+                            font-size: calc(var(--card-height) * 1 / 28);
                         }
                         & > .cartnlike{
                             display: flex;
-                            column-gap: 0.5vw;
+                            column-gap: calc(var(--card-height) * 0.5 / 28);
                             & > button{
                                 position: relative;
-                                height: 2.8vw;
-                                width: 2.8vw;
-                                border: 0.2vw solid var(--orange);
+                                height: 100%;
+                                width: calc((4.8 / 28 * 100) * 1%);
+                                border: calc(var(--card-height) * 0.2 / 28) solid var(--orange);
                                 border-radius: 50%;
                                 background-color: var(--orange);
                                 cursor: pointer;
@@ -625,6 +725,51 @@ body{
                                  "goods  .   ";
             & > div{
                 grid-column: span 2;
+                width: 80vw;
+                & > div{
+                    &:first-child{
+                        & > a{
+                            grid-template-columns: 180px auto 170px;
+                            & > img{
+                                align-self: center;
+                            }
+                            & > div:nth-child(2){
+                                grid-template-rows: 20% auto;
+                                padding: 0 5px;
+                                & > span{
+                                    font-weight: bold;
+                                    font-size: 20px;
+                                }
+                                & > p{
+                                    font-size: 14px;
+                                }
+                            }
+                            & > div:last-child{
+                                & > button{
+                                    width: 30px;
+                                    height: 30px;
+                                    &:first-child{
+                                        &::before{
+                                            top: 13.5px;
+                                        }
+                                    }
+                                    &:nth-child(3){
+                                        &::before, &::after{
+                                            top: 13.5px;
+                                        }
+                                    }
+                                }
+                                & > span{
+                                    width: 30px;
+                                }
+                            }
+                        }
+                    }
+                    &:last-child{
+                        --card-height: calc(((80vw - 20px) / 3) * 14 / 9);
+                        grid-template-columns: repeat(3, calc((80vw - 20px) / 3));
+                    }
+                }
             }
             min-height: calc(100vh - var(--header_height) - 4vw);
         }
@@ -690,6 +835,55 @@ body{
                 & a{
                     padding: 1em;
                     padding-bottom: calc(1em + 2px);
+                }
+            }
+        }
+        & > main{
+            padding: 2vw 2vw;
+            & > div{
+                width: 96vw;
+                & > div{
+                    &:first-child{
+                        & > a{
+                            grid-template-columns: 70px auto 125px;
+                            & > div:nth-child(2){
+                                & > span{
+                                    font-weight: bold;
+                                    font-size: 14px;
+                                }
+                                & > p{
+                                    font-size: 10px;
+                                    word-wrap: break-word;
+                                }
+                            }
+                            & > div:last-child{
+                                padding: 0 5px;
+                                column-gap: 5px;
+                                & > button{
+                                    width: 25px;
+                                    height: 25px;
+                                    &:first-child{
+                                        &::before{
+                                            top: 11px;
+                                        }
+                                    }
+                                    &:nth-child(3){
+                                        &::before, &::after{
+                                            top: 11px;
+                                        }
+                                    }
+                                }
+                                & > span{
+                                    width: 25px;
+                                    font-size: 15px;
+                                }
+                            }
+                        }
+                    }
+                    &:last-child{
+                        --card-height: calc(((96vw - 10px) / 2) * 14 / 9);
+                        grid-template-columns: repeat(2, calc((96vw - 10px) / 2));
+                    }
                 }
             }
         }

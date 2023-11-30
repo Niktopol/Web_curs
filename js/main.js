@@ -139,7 +139,7 @@ window.onload = function(){
                 in_cart = localStorage.getItem("cart").indexOf(popular[i*4+j]["id"]);
                 if(in_cart < 0){
                     cart.className = "selected";
-                    localStorage.setItem("cart", localStorage.getItem("cart")+popular[i*4+j]["id"]+",");
+                    localStorage.setItem("cart", localStorage.getItem("cart")+popular[i*4+j]["id"]+"-1,");
                 }else{
                     location.href = "cart.html";
                 }

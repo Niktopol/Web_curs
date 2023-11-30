@@ -55,7 +55,7 @@ window.onload = function(){
             if(in_cart < 0){
                 buttons[0].className = "selected";
                 buttons[0].querySelector("span").textContent = "В корзине";
-                localStorage.setItem("cart", localStorage.getItem("cart")+urlParams.get("id")+",");
+                localStorage.setItem("cart", localStorage.getItem("cart")+urlParams.get("id")+"-1,");
             }else{
                 location.href = "cart.html";
             }
