@@ -39,7 +39,58 @@ window.onload = function (){
     if(localStorage.getItem("cart") == null){
         localStorage.setItem("cart", "");
     }
+    return;
     let tabs = document.querySelectorAll("main > div > div");
+    for(let i of localStorage.getItem("liked").split(",")){
+        if(i != ""){
+            let a = document.createElement("a");
+            a.href = "good.html?id="+i;
+            let img = document.createElement("img");
+            img.setAttribute("src", key_goods[i]["image"]);
+            let price = document.createElement("div");
+            price.className = "price";
+            let span1 = document.createElement("span");
+            let span2 = document.createElement("span");
+            let span3 = document.createElement("span");
+            if(key_goods[i]["discount"] > 0){
+                span1.textContent = "-"+key_goods[i]["discount"]+"%";
+                span2.textContent = key_goods[i]["prices"]["new"]+" ₽";
+                span3.textContent = key_goods[i]["prices"]["old"]+" ₽";
+            }else{
+                span1.style.display = "none";
+                span2.textContent = key_goods[i]["prices"]["old"]+" ₽";
+            }
+            price.appendChild(span1);
+            price.appendChild(span2);
+            price.appendChild(span3);
+            let p = document.createElement("p");
+            p.textContent = key_goods[i]["name"];
+            let btns = document.createElement("div");
+            btns.className = "cartnlike";
+            let cart = document.createElement("button");
+            let cartimg = document.createElement("img");
+            cartimg.setAttribute("src", "images/cart.svg");
+            let in_cart = localStorage.getItem("cart").indexOf(key_goods[i]["id"]);
+            if(in_cart >= 0){
+                cart.className = "selected";
+            }
+            cart.appendChild(cartimg);
+            let like = document.createElement("button");
+            let likeimg = document.createElement("img");
+            likeimg.setAttribute("src", "images/heart.svg")
+            like.className = "selected";
+            
+            like.appendChild(likeimg);
+            btns.appendChild(cart);
+            btns.appendChild(like);
+
+            a.appendChild(img);
+            a.appendChild(price);
+            a.appendChild(p);
+            a.appendChild(btns); 
+            tabs[1].appendChild(a);          
+        }
+    }
     /*
     for(let category in goods){
         if(exists){

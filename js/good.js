@@ -26,21 +26,8 @@ window.onload = function(){
     if(localStorage.getItem("cart") == null){
         localStorage.setItem("cart", "");
     }
-    let exists = false;
-    let good;
-    for(let category in goods){
-        if(exists){
-            break;
-        }
-        for(let item of goods[category]){
-            if(item.id == Number(urlParams.get("id"))){
-                exists = true;
-                good = item;
-                break;
-            }
-        }
-    }
-    if(exists){
+    let good = key_goods?.[urlParams.get("id")];
+    if(good != undefined){
         document.querySelector("#name").textContent = good["name"];
         document.querySelector("#rating span").textContent = Math.floor(good["rating"]) == good["rating"] ? good["rating"]+".0" :  good["rating"];
         document.querySelector("main img").src = good["image"];
