@@ -306,7 +306,7 @@ body{
     }
     & > main{
         display: grid;
-        grid-template-columns: 18vw 78vw;
+        grid-template-columns: 250px auto;
         grid-template-rows: 60px auto;
         gap: 10px;
         min-height: calc(100vh - var(--header_height) - 4vw);
@@ -319,6 +319,231 @@ body{
             & > span{
                 font-size: 20px;
                 color: #ffffff;
+            }
+        }
+        & > div:nth-child(2){
+            display: flex;
+            align-items: center;
+            border-bottom: 3px solid var(--orange);
+            & > button{
+                display: flex;
+                align-items: flex-end;
+                column-gap: 0.2em;
+                padding: 0.5em 1em;
+                font-size: 18px;
+                border: none;
+                border-radius: 2em;
+                color: #ffffff;
+                background-color: var(--orange);
+                transition: background-color 0.2s ease-in-out;
+                &:active{
+                    background-color: var(--peach);
+                }
+                &:after{
+                    content: "";
+                    display: block;
+                    align-self: center;
+                    width: 1em;
+                    height: 0.14em;
+                    border-radius: 10px;
+                    background-color: #ffffff;
+                }
+                & > img{
+                    display: none;
+                    height: 1em;
+                    width: 1em;
+                    filter: invert(1);
+                }
+                &:is(.selected){
+                    &::after{
+                        display: none;
+                    }
+                    & > img{
+                        display: block;
+                    }
+                }
+            }
+        }
+        & div:nth-child(3){
+            padding: 0 3px;
+            border-left: 3px solid var(--orange);
+            border-right: 3px solid var(--orange);
+            & > form{
+                display: flex;
+                flex-direction: column;
+                row-gap: 10px;
+                & * {
+                    font-size: 18px;
+                }
+                & > div{
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 10px;
+                    &:first-child{
+                        & > span{
+                            text-align: center;                       
+                            & > input{
+                                width: 100%;
+                                border: none;
+                            }
+                            &:nth-child(odd){
+                                font-size: 20px;
+                            }
+                            &:nth-child(even){
+                                padding: 0.5em 1em;
+                                border-radius: 2em;
+                                box-shadow: 0 0 15px #00000026;
+                                & > input{
+                                    border-bottom: 2px solid var(--peach);
+                                }
+                            }
+                        }
+                    }
+                    &:nth-child(2){
+                        & > span{
+                            font-size: 20px;
+                            text-align: center;
+                        }
+                        & > label{
+                            padding: 0.5em 1em;
+                            border-radius: 2em;
+                            box-shadow: 0 0 15px #00000026;
+                        }
+                    }
+                }
+                & > input:last-child{
+                    padding: 0.5em 1em;
+                    font-size: 18px;
+                    color: #ffffff;
+                    border: none;
+                    border-radius: 2em;
+                    background-color: var(--orange);
+                    transition: background-color 0.2s ease-in-out;
+                    &:active{
+                        background-color: var(--peach);
+                    }
+                }
+            }
+        }
+        & > div:nth-child(4){
+            --card-height: calc(((82vw - 30px) / 4) * 14 / 9);
+            grid-template-columns: repeat(4, calc((82vw - 30px) / 4));
+            grid-auto-rows: var(--card-height);
+            gap: 10px;
+            & > a{
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: calc((11.6 / 28 * 100) * 1%) calc((3 / 28 * 100) * 1%) auto calc((3 / 28 * 100) * 1%);
+                padding: 1vw;
+                row-gap: 6px;
+                text-decoration: none;
+                color: #000000;
+                box-shadow: 0 0 8px #0000002f;
+                background-color: white;
+                &:visited{
+                    color: #000000;
+                }
+                & > img{
+                    width: 100%;
+                }
+                & > .price{
+                    border-top: 3px solid var(--orange);
+                    padding-top: calc(var(--card-height) * 0.25 / 28);
+                    display: flex;
+                    align-items: center;
+                    column-gap: calc(var(--card-height) * 0.5 / 28);
+                    & > span{
+                        &:nth-child(1){
+                            padding: 0 0.5em;
+                            border-radius: 15px;
+                            font-size: calc(var(--card-height) * 0.8 / 28);
+                            color: #ffffff;
+                            background-color: #ed1b24;
+                        }
+                        &:nth-child(2){
+                            font-weight: bold;
+                            font-size: calc(var(--card-height) * 1.4 / 28);
+                        }
+                        &:nth-child(3){
+                            font-size: calc(var(--card-height) * 0.8 / 28);
+                            text-decoration: line-through;
+                            color: #5a5a5a;
+                        }
+                    }
+                }
+                & > p{
+                    overflow: hidden;
+                    font-size: calc(var(--card-height) * 1 / 28);
+                }
+                & > .cartnlike{
+                    display: flex;
+                    column-gap: calc(var(--card-height) * 0.5 / 28);
+                    & > button{
+                        position: relative;
+                        height: 100%;
+                        width: calc((4.8 / 28 * 100) * 1%);
+                        border: calc(var(--card-height) * 0.2 / 28) solid var(--orange);
+                        border-radius: 50%;
+                        background-color: var(--orange);
+                        cursor: pointer;
+                        transition: background-color 0.2s ease-in-out;
+                        &:first-child{
+                            &::before, &::after{
+                                content: "";
+                                position: absolute;
+                                top: 38%;
+                                left: 45%;
+                                width: 20%;
+                                height: 7%;
+                                z-index: 1;
+                                border-radius: 5px;
+                                background-color: var(--orange);
+                            }
+                            &::after{
+                                transform: rotateZ(90deg);
+                            }
+                        }
+                        & > img{
+                            height: 60%;
+                            width: 60%;
+                            padding: 20%;
+                            filter: invert(1);
+                            transform: translateY(2.5%);
+                            transition: transform 0.2s ease-in-out;
+                        }
+                    }
+                    & > .selected{
+                        &:first-child{
+                            background-color: #ffffff;
+                            & > img{
+                                filter: invert(38%) sepia(98%) saturate(1145%) hue-rotate(344deg) brightness(95%) contrast(92%);
+                            }
+                            &::before, &::after{
+                                width: 15%;
+                                height: 15%;
+                                border-radius: 2px;
+                                transition: all 0.2s ease-in-out;
+                            }
+                            &::before{
+                                top: 15%;
+                                left: 40%;
+                                transform: rotateZ(-20deg);
+                            }
+                            &::after{
+                                top: 20%;
+                                left: 55%;
+                            }
+                        }
+                        &:last-child{
+                            border-color: #ed1b24;
+                            background-color: #ffffff;
+                            & > img{
+                                transform: scale(1.2) translateY(2.5%);
+                                filter: invert(11%) sepia(100%) saturate(3736%) hue-rotate(349deg) brightness(130%) contrast(95%);
+                            }
+                        }
+                    }
+                }
             }
         }
     }
