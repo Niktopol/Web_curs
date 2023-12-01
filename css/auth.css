@@ -63,6 +63,9 @@ body{
                     &:valid{
                         border-bottom: 3px solid var(--orange);
                     }
+                    &:focus{
+                        border-bottom: 3px solid var(--orange);
+                    }
                 }
             }
             & > input:last-child{
