@@ -366,12 +366,10 @@ body{
         }
         & div:nth-child(3){
             padding: 0 3px;
-            border-left: 3px solid var(--orange);
-            border-right: 3px solid var(--orange);
             & > form{
                 display: flex;
                 flex-direction: column;
-                row-gap: 10px;
+                gap: 10px;
                 & * {
                     font-size: 18px;
                 }
@@ -413,7 +411,6 @@ body{
                 }
                 & > input:last-child{
                     padding: 0.5em 1em;
-                    font-size: 18px;
                     color: #ffffff;
                     border: none;
                     border-radius: 2em;
@@ -426,14 +423,19 @@ body{
             }
         }
         & > div:nth-child(4){
-            --card-height: calc(((82vw - 30px) / 4) * 14 / 9);
-            grid-template-columns: repeat(4, calc((82vw - 30px) / 4));
+            display: grid;
+            --card-height: calc((((96vw - 250px) - 30px) / 4) * 14 / 9);
+            grid-template-columns: repeat(4, calc(((96vw - 250px) - 30px) / 4));
             grid-auto-rows: var(--card-height);
             gap: 10px;
             & > a{
                 display: grid;
                 grid-template-columns: 1fr;
                 grid-template-rows: calc((11.6 / 28 * 100) * 1%) calc((3 / 28 * 100) * 1%) auto calc((3 / 28 * 100) * 1%);
+                grid-template-areas: "img"
+                                     "price"
+                                     "name"
+                                     "buttons";
                 padding: 1vw;
                 row-gap: 6px;
                 text-decoration: none;
@@ -444,9 +446,11 @@ body{
                     color: #000000;
                 }
                 & > img{
+                    grid-area: img;
                     width: 100%;
                 }
                 & > .price{
+                    grid-area: price;
                     border-top: 3px solid var(--orange);
                     padding-top: calc(var(--card-height) * 0.25 / 28);
                     display: flex;
@@ -472,10 +476,12 @@ body{
                     }
                 }
                 & > p{
+                    grid-area: name;
                     overflow: hidden;
                     font-size: calc(var(--card-height) * 1 / 28);
                 }
                 & > .cartnlike{
+                    grid-area: buttons;
                     display: flex;
                     column-gap: calc(var(--card-height) * 0.5 / 28);
                     & > button{
@@ -632,6 +638,12 @@ body{
                 }
             }
         }
+        & > main{
+            & > div:nth-child(4){
+                --card-height: calc((((96vw - 250px) - 20px) / 3) * 14 / 9);
+                grid-template-columns: repeat(3, calc(((96vw - 250px) - 20px) / 3));
+            }
+        }
     }
 }
 @media screen and (max-width: 880px) {
@@ -693,8 +705,56 @@ body{
             }
         }
         & > main{
+            display: grid;
+            grid-template-columns: 98vw;
+            grid-template-rows: 300px 40px auto;
+            grid-template-areas: "params"
+                                 "order"
+                                 "cards";
+            gap: 10px;
             padding: 1vw;
             min-height: calc(100vh - var(--header_height) - 2vw);
+            & > div:first-child{
+                display: none;
+            }
+            & div:nth-child(2){
+                grid-area: order;
+                & > button{
+                    font-size: 14px;
+                }
+            }
+            & > div:nth-child(3){
+                grid-area: params;
+                height: 100%;
+                & > form{
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    height: 100%;
+                    & * {
+                        font-size: 14px;
+                    }
+                    & > div{
+                        max-height: calc(100% - 3em - 10px);
+                        padding: 0 10px;
+                        overflow-y: scroll;
+                        &:first-child{
+                            width: 40%;
+                        }
+                        &:nth-child(2) > span, &:first-child > span:nth-child(odd){
+                            font-size: 16px;
+                        }
+                    }
+                    & > input:last-child{
+                        flex-basis: 100%;
+                    }
+                }
+            }
+            & > div:nth-child(4){
+                grid-area: cards;
+                width: 98vw;
+                --card-height: calc(((98vw - 20px) / 3) * 14 / 9);
+                grid-template-columns: repeat(3, calc((98vw - 20px) / 3));
+            }
         }
         & > footer{
             gap: 10px;
@@ -761,6 +821,14 @@ body{
                 }
             }
         }
+        & > main{
+            & > div:nth-child(4){
+                grid-area: cards;
+                width: 98vw;
+                --card-height: calc(((98vw - 10px) / 2) * 14 / 9);
+                grid-template-columns: repeat(2, calc((98vw - 10px) / 2));
+            }
+        }
         & > footer{
             grid-template-columns: 1fr;
             grid-template-rows: repeat(3, auto);
@@ -769,6 +837,27 @@ body{
                 border-top: 3px solid var(--peach);
                 &:first-child{
                     border-top: none;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 435px) {
+    body{
+        & > main{
+            grid-template-rows: max-content 40px auto;
+            & > div:nth-child(3){
+                height: 100%;
+                & > form{
+                    flex-wrap: nowrap;
+                    flex-direction: column;
+                    & > div{
+                        max-height: none;
+                        overflow-y: visible;
+                        &:first-child{
+                            width: auto;
+                        }
+                    }
                 }
             }
         }
