@@ -306,7 +306,6 @@ body{
     }
     & > main{
         display: grid;
-        width: calc(96vw - (100% - 96vw));
         grid-template-columns: 250px auto;
         grid-template-rows: 60px auto;
         gap: 10px;
@@ -325,7 +324,6 @@ body{
         & > div:nth-child(2){
             display: flex;
             align-items: center;
-            border-bottom: 3px solid var(--orange);
             & > button{
                 display: flex;
                 align-items: flex-end;
@@ -334,6 +332,7 @@ body{
                 font-size: 18px;
                 border: none;
                 border-radius: 2em;
+                cursor: pointer;
                 color: #ffffff;
                 background-color: var(--orange);
                 transition: background-color 0.2s ease-in-out;
@@ -354,8 +353,10 @@ body{
                     height: 1em;
                     width: 1em;
                     filter: invert(1);
+                    margin-top: 0.4em;
                 }
                 &:is(.selected){
+                    align-items: center;
                     &::after{
                         display: none;
                     }
@@ -393,6 +394,7 @@ body{
                                 border-radius: 2em;
                                 box-shadow: 0 0 15px #00000026;
                                 & > input{
+                                    outline: none;
                                     border-bottom: 2px solid var(--peach);
                                 }
                             }
@@ -416,6 +418,7 @@ body{
                     border: none;
                     border-radius: 2em;
                     background-color: var(--orange);
+                    cursor: pointer;
                     transition: background-color 0.2s ease-in-out;
                     &:active{
                         background-color: var(--peach);
@@ -425,14 +428,14 @@ body{
         }
         & > div:nth-child(4){
             display: grid;
-            --card-height: calc((((96vw - 250px) - 30px) / 4) * 14 / 9);
-            grid-template-columns: repeat(4, calc(((96vw - 250px) - 30px) / 4));
+            --card-height: calc((((96vw - 260px) - 30px) / 4) * 14 / 9);
+            grid-template-columns: repeat(4, 1fr);
             grid-auto-rows: var(--card-height);
             gap: 10px;
             & > a{
                 display: grid;
                 grid-template-columns: 1fr;
-                grid-template-rows: calc((11.6 / 28 * 100) * 1%) calc((3 / 28 * 100) * 1%) auto calc((3 / 28 * 100) * 1%);
+                grid-template-rows: calc((11.6 / 28.4 * 100) * 1%) calc((3 / 28.4 * 100) * 1%) auto calc((3 / 28.4 * 100) * 1%);
                 grid-template-areas: "img"
                                      "price"
                                      "name"
@@ -453,24 +456,24 @@ body{
                 & > .price{
                     grid-area: price;
                     border-top: 3px solid var(--orange);
-                    padding-top: calc(var(--card-height) * 0.25 / 28);
+                    padding-top: calc(var(--card-height) * 0.25 / 28.4);
                     display: flex;
                     align-items: center;
-                    column-gap: calc(var(--card-height) * 0.5 / 28);
+                    column-gap: calc(var(--card-height) * 0.5 / 28.4);
                     & > span{
                         &:nth-child(1){
                             padding: 0 0.5em;
                             border-radius: 15px;
-                            font-size: calc(var(--card-height) * 0.8 / 28);
+                            font-size: calc(var(--card-height) * 0.8 / 28.4);
                             color: #ffffff;
                             background-color: #ed1b24;
                         }
                         &:nth-child(2){
                             font-weight: bold;
-                            font-size: calc(var(--card-height) * 1.4 / 28);
+                            font-size: calc(var(--card-height) * 1.4 / 28.4);
                         }
                         &:nth-child(3){
-                            font-size: calc(var(--card-height) * 0.8 / 28);
+                            font-size: calc(var(--card-height) * 0.8 / 28.4);
                             text-decoration: line-through;
                             color: #5a5a5a;
                         }
@@ -479,17 +482,17 @@ body{
                 & > p{
                     grid-area: name;
                     overflow: hidden;
-                    font-size: calc(var(--card-height) * 1 / 28);
+                    font-size: calc(var(--card-height) * 1 / 28.4);
                 }
                 & > .cartnlike{
                     grid-area: buttons;
                     display: flex;
-                    column-gap: calc(var(--card-height) * 0.5 / 28);
+                    column-gap: calc(var(--card-height) * 0.5 / 28.4);
                     & > button{
                         position: relative;
                         height: 100%;
                         width: calc((4.8 / 28 * 100) * 1%);
-                        border: calc(var(--card-height) * 0.2 / 28) solid var(--orange);
+                        border: calc(var(--card-height) * 0.2 / 28.4) solid var(--orange);
                         border-radius: 50%;
                         background-color: var(--orange);
                         cursor: pointer;
@@ -641,8 +644,8 @@ body{
         }
         & > main{
             & > div:nth-child(4){
-                --card-height: calc((((96vw - 250px) - 20px) / 3) * 14 / 9);
-                grid-template-columns: repeat(3, calc(((96vw - 250px) - 20px) / 3));
+                --card-height: calc((((96vw - 260px) - 20px) / 3) * 14 / 9);
+                grid-template-columns: repeat(3, 1fr);
             }
         }
     }
@@ -752,9 +755,7 @@ body{
             }
             & > div:nth-child(4){
                 grid-area: cards;
-                width: 98vw;
                 --card-height: calc(((98vw - 20px) / 3) * 14 / 9);
-                grid-template-columns: repeat(3, calc((98vw - 20px) / 3));
             }
         }
         & > footer{
@@ -825,9 +826,8 @@ body{
         & > main{
             & > div:nth-child(4){
                 grid-area: cards;
-                width: 98vw;
                 --card-height: calc(((98vw - 10px) / 2) * 14 / 9);
-                grid-template-columns: repeat(2, calc((98vw - 10px) / 2));
+                grid-template-columns: repeat(2, 1fr);
             }
         }
         & > footer{

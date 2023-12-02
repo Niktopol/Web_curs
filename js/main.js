@@ -1,9 +1,4 @@
 "use strict";
-//REMOVE
-function clearMem(){
-    localStorage.clear();
-}
-//
 function toggleMenuFold(){
     let catalogBtn = document.querySelector("#catalog");
     if(catalogBtn.className == "folded"){
@@ -20,6 +15,12 @@ function toggleMenuFold(){
 }
 document.querySelector("#catalog").addEventListener("click", toggleMenuFold);
 document.querySelector("#welcome button").addEventListener("click", toggleMenuFold);
+document.querySelector("#search_btn").addEventListener("click", function(){
+    let search = document.querySelector("#search input").value;
+    if(search != ""){
+        location.href = "catalog.html?name="+encodeURIComponent(search);
+    }
+});
 document.querySelector("#clear_btn").addEventListener("click", function(){
     document.querySelector("#search input").value = "";
 });
