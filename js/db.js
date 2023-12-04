@@ -554,28 +554,6 @@ let goods = {
         },
         {
             "id": "8105974",
-            "name": "Кровать с подъёмным механизмом Neo 140х200 см",
-            "image": "https://hoff.ru/upload/iblock/0b8/0b894e8930530f8cf6673815ac3c3d7d.jpg",
-            "prices": {
-                "new": 19999,
-                "old": 27999
-            },
-            "discount": 28,
-            "rating": 4.6
-        },
-        {
-            "id": "8105974",
-            "name": "Кровать с подъёмным механизмом Neo 180х200 см",
-            "image": "https://hoff.ru/upload/iblock/0b8/0b894e8930530f8cf6673815ac3c3d7d.jpg",
-            "prices": {
-                "new": 22999,
-                "old": 31999
-            },
-            "discount": 28,
-            "rating": 4.6
-        },
-        {
-            "id": "8105974",
             "name": "Кровать с подъёмным механизмом Neo 160х200 см",
             "image": "https://hoff.ru/upload/iblock/0b8/0b894e8930530f8cf6673815ac3c3d7d.jpg",
             "prices": {
@@ -1662,39 +1640,6 @@ let goods = {
     "mattresses": [
         {
             "id": "4904612",
-            "name": "Матрас пружинный MILDEX Wellington 160х200 см",
-            "image": "https://hoff.ru/upload/hoff_resize/hoff-images/490/461/2/f7b249768db7cf57589c53e30589ab5a.jpg/1500x1000_85.jpeg",
-            "prices": {
-                "new": 21999,
-                "old": 25999
-            },
-            "discount": 15,
-            "rating": 4.8
-        },
-        {
-            "id": "4904612",
-            "name": "Матрас пружинный MILDEX Wellington 160х190 см",
-            "image": "https://hoff.ru/upload/hoff_resize/hoff-images/490/461/2/f7b249768db7cf57589c53e30589ab5a.jpg/1500x1000_85.jpeg",
-            "prices": {
-                "new": 21999,
-                "old": 25999
-            },
-            "discount": 15,
-            "rating": 4.8
-        },
-        {
-            "id": "4904612",
-            "name": "Матрас пружинный MILDEX Wellington 180х200 см",
-            "image": "https://hoff.ru/upload/hoff_resize/hoff-images/490/461/2/f7b249768db7cf57589c53e30589ab5a.jpg/1500x1000_85.jpeg",
-            "prices": {
-                "new": 25999,
-                "old": 29999
-            },
-            "discount": 13,
-            "rating": 4.8
-        },
-        {
-            "id": "4904612",
             "name": "Матрас пружинный MILDEX Wellington 180х190 см",
             "image": "https://hoff.ru/upload/hoff_resize/hoff-images/490/461/2/f7b249768db7cf57589c53e30589ab5a.jpg/1500x1000_85.jpeg",
             "prices": {
@@ -1747,116 +1692,6 @@ let goods = {
             },
             "discount": 0,
             "rating": 4.7
-        },
-        {
-            "id": "5557386",
-            "name": "Матрас беспружинный Mimosa 70х160 см",
-            "image": "https://hoff.ru/upload/iblock/ba5/ba5735653cd77c94e3cb40f52705808d.jpg",
-            "prices": {
-                "new": 2899,
-                "old": 2899
-            },
-            "discount": 0,
-            "rating": 4.6
-        },
-        {
-            "id": "5557386",
-            "name": "Матрас беспружинный Mimosa 80х190 см",
-            "image": "https://hoff.ru/upload/iblock/ba5/ba5735653cd77c94e3cb40f52705808d.jpg",
-            "prices": {
-                "new": 3999,
-                "old": 3999
-            },
-            "discount": 0,
-            "rating": 4.6
-        },
-        {
-            "id": "5557386",
-            "name": "Матрас беспружинный Mimosa 80х200 см",
-            "image": "https://hoff.ru/upload/iblock/ba5/ba5735653cd77c94e3cb40f52705808d.jpg",
-            "prices": {
-                "new": 3999,
-                "old": 3999
-            },
-            "discount": 0,
-            "rating": 4.6
-        },
-        {
-            "id": "5557386",
-            "name": "Матрас беспружинный Mimosa 90х200 см",
-            "image": "https://hoff.ru/upload/iblock/ba5/ba5735653cd77c94e3cb40f52705808d.jpg",
-            "prices": {
-                "new": 4299,
-                "old": 4299
-            },
-            "discount": 0,
-            "rating": 4.6
-        },
-        {
-            "id": "5557386",
-            "name": "Матрас беспружинный Mimosa 90х190 см",
-            "image": "https://hoff.ru/upload/iblock/ba5/ba5735653cd77c94e3cb40f52705808d.jpg",
-            "prices": {
-                "new": 4299,
-                "old": 4299
-            },
-            "discount": 0,
-            "rating": 4.6
-        },
-        {
-            "id": "5557386",
-            "name": "Матрас беспружинный Mimosa 120х190 см",
-            "image": "https://hoff.ru/upload/iblock/ba5/ba5735653cd77c94e3cb40f52705808d.jpg",
-            "prices": {
-                "new": 5299,
-                "old": 5299
-            },
-            "discount": 0,
-            "rating": 4.6
-        },
-        {
-            "id": "5557386",
-            "name": "Матрас беспружинный Mimosa 140х200 см",
-            "image": "https://hoff.ru/upload/iblock/ba5/ba5735653cd77c94e3cb40f52705808d.jpg",
-            "prices": {
-                "new": 5999,
-                "old": 5999
-            },
-            "discount": 0,
-            "rating": 4.6
-        },
-        {
-            "id": "5557386",
-            "name": "Матрас беспружинный Mimosa 140х190 см",
-            "image": "https://hoff.ru/upload/iblock/ba5/ba5735653cd77c94e3cb40f52705808d.jpg",
-            "prices": {
-                "new": 5999,
-                "old": 5999
-            },
-            "discount": 0,
-            "rating": 4.6
-        },
-        {
-            "id": "5557386",
-            "name": "Матрас беспружинный Mimosa 160х190 см",
-            "image": "https://hoff.ru/upload/iblock/ba5/ba5735653cd77c94e3cb40f52705808d.jpg",
-            "prices": {
-                "new": 6599,
-                "old": 6599
-            },
-            "discount": 0,
-            "rating": 4.6
-        },
-        {
-            "id": "5557386",
-            "name": "Матрас беспружинный Mimosa 160х200 см",
-            "image": "https://hoff.ru/upload/iblock/ba5/ba5735653cd77c94e3cb40f52705808d.jpg",
-            "prices": {
-                "new": 6599,
-                "old": 6599
-            },
-            "discount": 0,
-            "rating": 4.6
         },
         {
             "id": "5557386",
@@ -2834,17 +2669,6 @@ let goods = {
         },
         {
             "id": "7757383",
-            "name": "Угловой диван-кровать DREAMART Тулуза с левым углом",
-            "image": "https://hoff.ru/upload/iblock/d86/d8623d4ad389fbd5ab77d60cb23b753c.png",
-            "prices": {
-                "new": 95999,
-                "old": 95999
-            },
-            "discount": 0,
-            "rating": 4.4
-        },
-        {
-            "id": "7757383",
             "name": "Угловой диван-кровать DREAMART Тулуза с правым углом",
             "image": "https://hoff.ru/upload/iblock/d86/d8623d4ad389fbd5ab77d60cb23b753c.png",
             "prices": {
@@ -2941,17 +2765,6 @@ let goods = {
             },
             "discount": 0,
             "rating": 4.7
-        },
-        {
-            "id": "9316687",
-            "name": "Угловой диван-кровать SOLANA Мэдисон с правым углом с правым углом",
-            "image": "https://hoff.ru/upload/iblock/925/tsgksmltorabj4yh23mfs12rkhhtjmo2.jpg",
-            "prices": {
-                "new": 67999,
-                "old": 67999
-            },
-            "discount": 0,
-            "rating": 4.8
         },
         {
             "id": "9316687",

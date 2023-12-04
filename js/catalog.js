@@ -57,6 +57,12 @@ document.getElementById("sort").addEventListener("click", function(){
 });
 
 window.onload = function(){
+    if(localStorage.getItem("liked") == null){
+        localStorage.setItem("liked", "");
+    }
+    if(localStorage.getItem("cart") == null){
+        localStorage.setItem("cart", "");
+    }
     let categorized = false;
     let price = (urlParams.get("price") == null || urlParams.get("price") == "") ? 0 : Number(urlParams.get("price"));
     let name = (urlParams.get("name") ?? "").trim().toLowerCase();
