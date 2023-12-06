@@ -264,11 +264,26 @@ window.onload = function (){
     if(localStorage.getItem("cart") == null){
         localStorage.setItem("cart", "");
     }
-    updateCart();
-    updateLiked();
-    if(urlParams.get("liked") == null){
-        toggleCart(0);
-    }else{
-        toggleCart(1);
+    try{
+        updateCart();
     }
+    catch(e){
+        alert("1");
+    }
+    try{
+        updateLiked();
+    }
+    catch(e){
+        alert("2");
+    }
+    try{
+        if(urlParams.get("liked") == null){
+            toggleCart(0);
+        }else{
+            toggleCart(1);
+        }
+    }catch(e){
+        alert("3");
+    }
+    
 };
