@@ -48,8 +48,8 @@ function updateCart(){
     goodsPrice = 0;
     for(let i of localStorage.getItem("cart").split(",")){
         if(i != ""){
-            tabs[0].querySelector("& > span").style.display = "none";
-            tabs[0].querySelector("& > div").style.display = "block";
+            tabs[0].querySelector("span").style.display = "none";
+            tabs[0].querySelector("div").style.display = "block";
             let splitted = i.split("-");
             let a = document.createElement("a");
             a.href = "good.html?id="+splitted[0];
@@ -102,8 +102,8 @@ function updateCart(){
                         tabs[0].removeChild(a);
                         updateLiked();
                         if(tabs[0].querySelector("a") == null){
-                            tabs[0].querySelector("& > span").style.display = "block";
-                            tabs[0].querySelector("& > div").style.display = "none";
+                            tabs[0].querySelector("span").style.display = "block";
+                            tabs[0].querySelector("div").style.display = "none";
                         }
                     }else{
                         localStorage.setItem("cart", localStorage.getItem("cart").replace(splitted[0]+"-"+count+",", splitted[0]+"-"+nextCount+","));
@@ -156,8 +156,8 @@ function updateCart(){
                     tabs[0].removeChild(a);
                     updateLiked();
                     if(tabs[0].querySelector("a") == null){
-                        tabs[0].querySelector("& > span").style.display = "block";
-                        tabs[0].querySelector("& > div").style.display = "none";
+                        tabs[0].querySelector("span").style.display = "block";
+                        tabs[0].querySelector("div").style.display = "none";
                     }
                     goodsPrice -= key_goods[splitted[0]]["prices"]["new"]*Number(count);
                     tabs[0].querySelector("div").textContent = "Итого: "+goodsPrice+" ₽";
