@@ -267,18 +267,8 @@ window.onload = function (){
     if(localStorage.getItem("cart") == null){
         localStorage.setItem("cart", "");
     }
-    try{
-        updateCart();
-    }
-    catch(e){
-        alert("1");
-    }
-    try{
-        updateLiked();
-    }
-     catch(e){
-         alert("2");
-    }
+    updateCart();
+    updateLiked();
     if(urlParams.get("liked") == null){
         toggleCart(0);
     }else{
