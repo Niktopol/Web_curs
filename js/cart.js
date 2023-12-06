@@ -1,3 +1,4 @@
+"use strict";
 const urlParams = new URLSearchParams(window.location.search);
 
 function toggleMenuFold(){
@@ -41,7 +42,7 @@ buttons[1].addEventListener("click", function(){
 let goodsPrice = 0;
 function updateCart(){
     let tabs = document.querySelectorAll("main > div > div");
-    for(child of tabs[0].querySelectorAll("a")){
+    for(let child of tabs[0].querySelectorAll("a")){
         tabs[0].removeChild(child);
     }
     goodsPrice = 0;
@@ -171,12 +172,14 @@ function updateCart(){
 }
 function updateLiked(){
     let tabs = document.querySelectorAll("main > div > div");
-    for(child of tabs[1].querySelectorAll("a")){
+    for(let child of tabs[1].querySelectorAll("a")){
         tabs[1].removeChild(child);
     }
+    
     for(let i of localStorage.getItem("liked").split(",")){
         if(i != ""){
-            tabs[1].querySelector("& > span").style.display = "none";
+            tabs[1].querySelector("span").style.display = "none";
+            
             let a = document.createElement("a");
             a.href = "good.html?id="+i;
             let img = document.createElement("img");
@@ -273,17 +276,12 @@ window.onload = function (){
     try{
         updateLiked();
     }
-    catch(e){
-        alert("2");
+     catch(e){
+         alert("2");
     }
-    try{
-        if(urlParams.get("liked") == null){
-            toggleCart(0);
-        }else{
-            toggleCart(1);
-        }
-    }catch(e){
-        alert("3");
+    if(urlParams.get("liked") == null){
+        toggleCart(0);
+    }else{
+        toggleCart(1);
     }
-    
 };
