@@ -250,7 +250,7 @@ function updateLiked(){
                     localStorage.setItem("liked", localStorage.getItem("liked").replace(i+",", ""));
                     tabs[1].removeChild(a);
                     if(tabs[1].querySelector("a") == null){
-                        tabs[1].querySelector("& > span").style.display = "block";
+                        tabs[1].querySelector("span").style.display = "block";
                     }
                 }else{
                     updateLiked();
