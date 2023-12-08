@@ -388,6 +388,8 @@ body > main > div > div:nth-child(4) > button:first-child > div{
     position: relative;
     display: flex;
     align-items: center;
+    height: 3.4vw;
+    width: 3.4vw;
 }
 body > main > div > div:nth-child(4) > button:first-child > div::before, body > main > div > div:nth-child(4) > button:first-child > div::after{
     content: "";
@@ -622,6 +624,10 @@ body > footer > div:last-child > span > a{
     body > main > div > div:nth-child(4) > button:first-child{
         grid-template-columns: 5.4vw 1fr;
         grid-template-rows: 5.4vw;
+    }
+    body > main > div > div:nth-child(4) > button:first-child > div{
+        height: 5.4vw;
+        width: 5.4vw;
     }
     body > main > div > div:nth-child(4) > button:first-child > span{
         font-size: 3vw;
