@@ -380,9 +380,11 @@ body > main > div > div:nth-child(4) > button:first-child{
     display: grid;
     grid-template-columns: 3.4vw 1fr;
     grid-template-rows: 3.4vw;
+    grid-template-areas: "bimg text";
     align-items: center;
 }
 body > main > div > div:nth-child(4) > button:first-child > div{
+    grid-area: bimg;
     position: relative;
     width: 100%;
     height: 100%;
@@ -402,6 +404,7 @@ body > main > div > div:nth-child(4) > button:first-child > div::after{
     transform: rotateZ(90deg);
 }
 body > main > div > div:nth-child(4) > button:first-child > span{
+    grid-area: text;
     font-size: 2vw;
     color: #ffffff;
 }
