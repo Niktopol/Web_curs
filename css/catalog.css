@@ -9,7 +9,7 @@
     padding: 0;
     margin: 0;
 }
-body:is(.unfolded){
+.b-unfolded{
     overflow-y: hidden;
 }
 body * {
@@ -262,10 +262,10 @@ body > #menu{
 body > #menu::-webkit-scrollbar{
     width: 0;
 }
-body > #menu:is(.folded){
+body > .folded{
     top: -100%;
 }
-body > #menu:is(.unfolded){
+body > .unfolded{
     top: var(--header_height);
 }
 body > #menu > ul{
@@ -351,13 +351,13 @@ body > main > div:nth-child(2) > button > img{
     filter: invert(1);
     margin-top: 0.4em;
 }
-body > main > div:nth-child(2) > button:is(.selected){
+body > main > div:nth-child(2) > .selected{
     align-items: center;
 }
-body > main > div:nth-child(2) > button:is(.selected)::after{
+body > main > div:nth-child(2) > .selected::after{
     display: none;
 }
-body > main > div:nth-child(2) > button:is(.selected) > img{
+body > main > div:nth-child(2) > .selected > img{
     display: block;
 }
 body > main > div:nth-child(3){

@@ -9,7 +9,7 @@
     padding: 0;
     margin: 0;
 }
-body:is(.unfolded){
+.b-unfolded{
     overflow-y: hidden;
 }
 body * {
@@ -258,10 +258,10 @@ body > #menu{
 body > #menu::-webkit-scrollbar{
     width: 0;
 }
-body > #menu:is(.folded){
+body > .folded{
     top: -100%;
 }
-body > #menu:is(.unfolded){
+body > .unfolded{
     top: var(--header_height);
 }
 body > #menu > ul{
@@ -405,35 +405,35 @@ body > main > div > div:nth-child(4) > button:first-child > span{
     font-size: 2vw;
     color: #ffffff;
 }
-body > main > div > div:nth-child(4) > button:first-child:is(.selected){
+body > main > div > div:nth-child(4) > .selected:first-child{
     background-color: #ffffff;
 }
-body > main > div > div:nth-child(4) > button:first-child:is(.selected) > div::before, body > main > div > div:nth-child(4) > button:first-child:is(.selected) > div::after{
+body > main > div > div:nth-child(4) > .selected:first-child > div::before, body > main > div > div:nth-child(4) > .selected:first-child > div::after{
     width: 15%;
     height: 15%;
     border-radius: 2px;
     transition: all 0.2s ease-in-out;
 }
-body > main > div > div:nth-child(4) > button:first-child:is(.selected) > div::before{
+body > main > div > div:nth-child(4) > .selected:first-child > div::before{
     top: 15%;
     left: 40%;
     transform: rotateZ(-20deg);
 }
-body > main > div > div:nth-child(4) > button:first-child:is(.selected) > div::after{
+body > main > div > div:nth-child(4) > .selected:first-child > div::after{
     top: 20%;
     left: 55%;
 }
-body > main > div > div:nth-child(4) > button:first-child:is(.selected) > div > img{
+body > main > div > div:nth-child(4) > .selected:first-child > div > img{
     filter: invert(38%) sepia(98%) saturate(1145%) hue-rotate(344deg) brightness(95%) contrast(92%);
 }
-body > main > div > div:nth-child(4) > button:first-child:is(.selected) > span{
+body > main > div > div:nth-child(4) > .selected:first-child > span{
     color: var(--orange);
 }
-body > main > div > div:nth-child(4) > button:last-child:is(.selected){
+body > main > div > div:nth-child(4) > .selected:last-child{
     border-color: #ed1b24;
     background-color: #ffffff;
 }
-body > main > div > div:nth-child(4) > button:last-child:is(.selected) > img{
+body > main > div > div:nth-child(4) > .selected:last-child > img{
     transform: scale(1.3) translateY(2.5%);
     filter: invert(11%) sepia(100%) saturate(3736%) hue-rotate(349deg) brightness(130%) contrast(95%);
 }

@@ -9,7 +9,7 @@
     padding: 0;
     margin: 0;
 }
-body:is(.unfolded){
+.b-unfolded{
     overflow-y: hidden;
 }
 body * {
@@ -258,10 +258,10 @@ body > #menu{
 body > #menu::-webkit-scrollbar{
     width: 0;
 }
-body > #menu:is(.folded){
+body > .folded{
     top: -100%;
 }
-body > #menu:is(.unfolded){
+body > .unfolded{
     top: var(--header_height);
 }
 body > #menu > ul{
@@ -313,7 +313,7 @@ body > main > button{
     color: #ffffff;
     transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
-body > main > button:is(.selected){
+body > main > .selected{
     color: var(--orange);
     background-color: #ffffff;
     cursor: default;
@@ -547,7 +547,7 @@ body > main > div > div:last-child > a > .cartnlike > .selected:last-child > img
     transform: scale(1.2) translateY(2.5%);
     filter: invert(11%) sepia(100%) saturate(3736%) hue-rotate(349deg) brightness(130%) contrast(95%);
 }
-body > main > div > div:is(.selected){
+body > main > div > .selected{
     display: grid;
 }
 body > footer{

@@ -5,7 +5,7 @@ function toggleMenuFold(){
         catalogBtn.className = "unfolded";
         catalogBtn.querySelector("#burger").className = "unfolded";
         document.querySelector("#menu").className = "unfolded";
-        document.body.className = "unfolded";
+        document.body.className = "b-unfolded";
     }else{
         catalogBtn.className = "folded";
         catalogBtn.querySelector("#burger").className = "folded";

@@ -48,7 +48,7 @@
 body{
     padding-top: var(--header_height);
 }
-body:is(.unfolded){
+.b-unfolded{
     overflow-y: hidden;
 }
 body * {
@@ -302,10 +302,10 @@ body > #menu{
 body > #menu::-webkit-scrollbar{
     width: 0;
 }
-body > #menu:is(.folded){
+body > .folded{
     top: -100%;
 }
-body > #menu:is(.unfolded){
+body > .unfolded{
     top: var(--header_height);
 }
 body > #menu > ul{
