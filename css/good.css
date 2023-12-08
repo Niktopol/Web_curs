@@ -377,16 +377,15 @@ body > main > div > div:nth-child(4) > button img{
     transition: transform 0.2s ease-in-out;
 }
 body > main > div > div:nth-child(4) > button:first-child{
-    display: grid;
-    grid-template-columns: 3.4vw auto;
-    grid-template-rows: 3.4vw;
-    grid-template-areas: "bimg text";
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
     align-items: center;
 }
 body > main > div > div:nth-child(4) > button:first-child > div{
-    grid-area: bimg;
     position: relative;
     display: flex;
+    flex-shrink: 0;
     align-items: center;
     height: 3.4vw;
     width: 3.4vw;
@@ -406,9 +405,7 @@ body > main > div > div:nth-child(4) > button:first-child > div::after{
     transform: rotateZ(90deg);
 }
 body > main > div > div:nth-child(4) > button:first-child > span{
-    grid-area: text;
-    justify-self: center;
-    width: fit-content;
+    flex-basis: 100%;
     text-align: center;
     font-size: 2vw;
     color: #ffffff;
@@ -623,10 +620,6 @@ body > footer > div:last-child > span > a{
         grid-template-columns: 52.5vw 6vw;
         grid-template-rows: 100%;
         column-gap: 1.5vw;
-    }
-    body > main > div > div:nth-child(4) > button:first-child{
-        grid-template-columns: 5.4vw auto;
-        grid-template-rows: 5.4vw;
     }
     body > main > div > div:nth-child(4) > button:first-child > div{
         height: 5.4vw;
