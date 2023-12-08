@@ -378,7 +378,7 @@ body > main > div > div:nth-child(4) > button img{
 }
 body > main > div > div:nth-child(4) > button:first-child{
     display: grid;
-    grid-template-columns: 3.4vw 1fr;
+    grid-template-columns: 3.4vw auto;
     grid-template-rows: 3.4vw;
     grid-template-areas: "bimg text";
     align-items: center;
@@ -622,7 +622,7 @@ body > footer > div:last-child > span > a{
         column-gap: 1.5vw;
     }
     body > main > div > div:nth-child(4) > button:first-child{
-        grid-template-columns: 5.4vw 1fr;
+        grid-template-columns: 5.4vw auto;
         grid-template-rows: 5.4vw;
     }
     body > main > div > div:nth-child(4) > button:first-child > div{

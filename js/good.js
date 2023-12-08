@@ -32,7 +32,7 @@ window.onload = function(){
     if(localStorage.getItem("cart") == null){
         localStorage.setItem("cart", "");
     }
-    let good = key_goods?.[urlParams.get("id")];
+    let good = key_goods[urlParams.get("id")];
     if(good != undefined){
         document.querySelector("#name").textContent = good["name"];
         document.querySelector("#rating span").textContent = Math.floor(good["rating"]) == good["rating"] ? good["rating"]+".0" :  good["rating"];
